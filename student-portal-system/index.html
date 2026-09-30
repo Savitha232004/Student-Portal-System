@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Save Attendance</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="page-container">
+
+
+        <section class="attendance-card">
+
+
+            <!-- Header -->
+
+            <div class="header">
+
+                <h1>
+                    Save Attendance
+                </h1>
+
+                <p>
+                    Record attendance for a
+                    student and subject.
+                </p>
+
+            </div>
+
+
+            <!-- Message -->
+
+            <div
+                id="message"
+                class="message"
+                role="alert"
+            ></div>
+
+
+            <!-- Attendance Form -->
+
+            <form
+                id="attendanceForm"
+                novalidate
+            >
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="studentId">
+                        Student ID
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        placeholder="Example: STU001"
+                        autocomplete="off"
+                    >
+
+                    <small
+                        id="studentIdError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="date">
+                        Date
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                    >
+
+                    <small
+                        id="dateError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+                <!-- Subject -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Example: Mathematics"
+                        autocomplete="off"
+                    >
+
+                    <small
+                        id="subjectError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Attendance Status
+                        <span>*</span>
+                    </label>
+
+                    <select
+                        id="status"
+                        name="status"
+                    >
+
+                        <option value="">
+                            Select attendance status
+                        </option>
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                        <option value="Late">
+                            Late
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="statusError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+                <!-- Save Button -->
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="save-button"
+                >
+
+                    <span id="buttonText">
+                        Save Attendance
+                    </span>
+
+                    <span
+                        id="loader"
+                        class="loader"
+                    ></span>
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
