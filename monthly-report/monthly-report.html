@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Attendance Report</title>
+    <link rel="stylesheet" href="monthly-report.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Monthly Attendance Report</h1>
+        <p class="subtitle">
+            Generate and view monthly attendance reports for students
+        </p>
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <div class="filter-group">
+                <label for="month">Select Month</label>
+                <input type="month" id="month" value="2026-10">
+            </div>
+
+            <div class="filter-group">
+                <label for="student">Student</label>
+                <select id="student">
+                    <option value="all">All Students</option>
+                    <option value="STU001">Rahul Kumar</option>
+                    <option value="STU002">Priya Sharma</option>
+                    <option value="STU003">Arun Kumar</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="all">All Status</option>
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                    <option value="On Leave">On Leave</option>
+                </select>
+            </div>
+
+            <button onclick="generateReport()">Generate Report</button>
+            <button class="reset-btn" onclick="resetReport()">Reset</button>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+
+            <div class="summary-card">
+                <h3>Total Days</h3>
+                <p id="totalDays">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Present</h3>
+                <p id="presentDays">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Absent</h3>
+                <p id="absentDays">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Leave</h3>
+                <p id="leaveDays">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Attendance %</h3>
+                <p id="attendancePercentage">0%</p>
+            </div>
+
+        </div>
+
+        <!-- Report Table -->
+        <div class="report-section">
+
+            <h2>Monthly Attendance Details</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl. No</th>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="reportTable">
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- Export -->
+        <div class="export-section">
+            <button onclick="exportCSV()">Export CSV</button>
+            <button onclick="exportPDF()">Export PDF</button>
+        </div>
+
+    </div>
+
+    <script src="monthly-report.js"></script>
+
+</body>
+
+</html>
